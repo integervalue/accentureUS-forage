@@ -1,10 +1,33 @@
+#on: push
+#name: Jenkins single-shot master
+#jobs:
+#  jenkinsfile-runner-prepackaged:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@master
+#      - name: Jenkinsfile Runner Prepackaged
+#        uses: jenkinsci/jenkinsfile-runner-github-actions@v0.2
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 on: push
 name: Jenkins single-shot master
 jobs:
   jenkinsfile-runner-prepackaged:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js 20.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+
+      - name: Install Yarn
+        run: npm install -g yarn
+
       - name: Jenkinsfile Runner Prepackaged
         uses: jenkinsci/jenkinsfile-runner-github-actions@v0.2
         env:
