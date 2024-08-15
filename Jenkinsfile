@@ -6,7 +6,7 @@ pipeline {
    agent any
 
    environment {
-           NODE_VERSION = '20.16.0'
+           NODE_VERSION = '16.20.0'
            NODE_DIR = "${WORKSPACE}/nodejs" // Directory to install Node.js
            PATH = "${NODE_DIR}/bin:${PATH}" // Add Node.js and npm to PATH
        }
