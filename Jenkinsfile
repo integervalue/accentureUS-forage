@@ -17,6 +17,5 @@ pipeline {
                    ./gradlew test
                }
            }
-           }
-       }
+   }
 }
