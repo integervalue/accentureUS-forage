@@ -10,10 +10,9 @@ pipeline {
            NODE_DIR = "${WORKSPACE}/nodejs" // Directory to install Node.js
            PATH = "${NODE_DIR}/bin:${PATH}" // Add Node.js and npm to PATH
        }
-   
+
    stages {
-           stages {
-                   stage('Setup Node.js, npm, and Yarn') {
+           stage('Setup Node.js, npm, and Yarn') {
                        steps {
                            // Determine the OS and architecture
                            sh '''
