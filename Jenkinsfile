@@ -8,13 +8,13 @@ pipeline {
    stages {
            stage('Build') {
                steps {
-                   export NODE_OPTIONS=--openssl-legacy-provider
-                   ./gradlew assemble
+                   sh 'export NODE_OPTIONS=--openssl-legacy-provider'
+                   sh './gradlew assemble'
                }
            }
            stage('Test') {
                steps {
-                   ./gradlew test
+                   sh './gradlew test'
                }
            }
    }
