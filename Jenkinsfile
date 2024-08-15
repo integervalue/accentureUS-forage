@@ -10,7 +10,7 @@ pipeline {
                    steps {
                        sh '''
                        # Install Node.js and npm
-                       curl -fsSL https://deb.nodesource.com/setup_14.x | bash -
+                       curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
                        apt-get install -y nodejs
 
                        # Install Yarn
