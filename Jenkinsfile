@@ -6,13 +6,9 @@ pipeline {
    agent any
    
    stages {
-           stage('Add legacy crypto support') {
-                steps{
-                    export NODE_OPTIONS=--openssl-legacy-provider
-                }
-           }
            stage('Build') {
                steps {
+                   export NODE_OPTIONS=--openssl-legacy-provider
                    ./gradlew assemble
                }
            }
