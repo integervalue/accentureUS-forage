@@ -77,7 +77,6 @@ pipeline {
                    }
            stage('Build') {
                steps {
-                   sh 'export NODE_OPTIONS=--openssl-legacy-provider'
                    sh './gradlew assemble'
                }
            }
